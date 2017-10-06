@@ -21,7 +21,7 @@ public class ExampleRunner {
         Set<Integer> iSet;
 
         try {
-            data = fr.readFile("testfile1.csv");
+            data = fr.readFile(args.length > 0 ? args[0] : "testfile1.csv");
 
             StatsMeanFinder mean = new StatsMeanFinder();
             StatsMostCommon mode = new StatsMostCommon();
