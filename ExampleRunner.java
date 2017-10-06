@@ -39,10 +39,10 @@ public class ExampleRunner {
                 for (Integer j : iSet) {
                     System.out.print(j + " ");
                 }
+                System.out.print("\n");
             } else {
                 System.out.println("Not Available");
             }
-            System.out.print("\n");
             
             i = most.performOperation(data.getSet());
             System.out.println("Most elements per line: " + (i != null ? i : "Not available"));
