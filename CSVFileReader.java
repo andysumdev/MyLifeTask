@@ -31,10 +31,14 @@ public class CSVFileReader {
         try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
             while ((line = reader.readLine()) != null) {
                 row = new CSVFileData.Row();
-                lineElements = line.split(splitCharacter);
-                numberOfElements = lineElements.length;
-                for (int index = 0; index < numberOfElements; index++) {
-                    row.add(Integer.valueOf(lineElements[index]));
+
+                /* Don't process blank lines */
+                if (!line.trim().isEmpty()) {
+                    lineElements = line.split(splitCharacter);
+                    numberOfElements = lineElements.length;
+                    for (int index = 0; index < numberOfElements; index++) {
+                        row.add(Integer.valueOf(lineElements[index]));
+                    }
                 }
                 set.add(row);
             }
